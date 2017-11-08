@@ -1,5 +1,7 @@
 # Clientpanel
 
+This project is a complete client management system that uses firebase which is a cloud database maintained by Google. It includes real-time databases, authentication storage and much more.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
 ## Development server
