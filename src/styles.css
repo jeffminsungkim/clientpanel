@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+img {
+    margin: 50px;
+}
+
 .alert p {
     margin: 0;
     padding: 0;
+}
+
+.input-group-addon.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(51,122,183);
+    border-color: rgb(40, 94, 142);
 }
