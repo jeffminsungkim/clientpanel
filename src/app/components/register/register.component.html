@@ -1,3 +1,52 @@
-<p>
-  register works!
-</p>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <img class="d-block mx-auto" src="/assets/img/register-now-button-dark-blue.png" alt="">
+        <form novalidate (submit)="onSubmit()">
+          <div class="form-group">
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+              <div class="input-group-addon primary"><i class="fa fa-envelope fa-2x"></i></div>
+              <input type="email" 
+              class="form-control" 
+              [ngClass]="{'is-invalid':userEmail.errors?.required && userEmail.touched || userEmail.errors?.pattern}" 
+              [(ngModel)]="email" 
+              name="email" 
+              #userEmail="ngModel" 
+              placeholder="Enter email" 
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+              required>
+            </div>
+            <div *ngIf="userEmail.errors?.required && userEmail.touched" class="text-danger">
+                Email is required.
+            </div>
+            <div *ngIf="userEmail.errors?.pattern" class="text-danger">
+                Email is invalid.
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+              <div class="input-group-addon primary"><i class="fa fa-key fa-2x"></i></div>
+              <input type="password" 
+              class="form-control" 
+              [ngClass]="{'is-invalid':userPassword.errors?.required && userPassword.touched || userPassword.errors?.minlength}" 
+              [(ngModel)]="password" 
+              name="password"
+              #userPassword="ngModel"
+              placeholder="Password" 
+              minlength="10" 
+              required>
+            </div>
+            <div *ngIf="userPassword.errors?.required && userPassword.touched" class="text-danger">
+                Password is required.
+            </div>
+            <div *ngIf="userPassword.errors?.minlength" class="text-danger">
+                Password is too short.
+            </div>
+          </div>
+          <input type="submit" value="Login" class="btn btn-primary btn-block">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
