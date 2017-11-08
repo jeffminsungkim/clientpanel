@@ -46,8 +46,7 @@ export class ClientDetailsComponent implements OnInit {
     if (confirm("Are you sure you want to delete the account?")) {
       this.clientService.deleteClient(this.id);
       this.flashMessagesService.show(this.client.firstName +" "+ this.client.lastName +" "+ 'successfully removed.', {cssClass:'alert-success', timeout: 4000});
-      this.router.navigate(['/');
-      console.log("onDeleteClick()", this.client);
+      this.router.navigate(['/']);
     }
   }
 }
