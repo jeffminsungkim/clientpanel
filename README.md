@@ -8,9 +8,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features
 
-+ ##### Components are all separately nested inside of the dashboard component.
-+ ##### Basic CRUD operations with Firebase
-+ ##### Settings component that could disable the entire registration and could disable balance on add/edit.
++ Components are all separately nested inside of the dashboard component.
++ Basic CRUD operations with Firebase
++ Settings component that could disable the entire registration and could disable balance on add/edit.
 
 <br>
 
