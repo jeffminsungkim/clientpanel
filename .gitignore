@@ -1,5 +1,28 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Env
+**/src/environments/environment.prod.ts
+**/src/environments/environment.ts
+
+# boilerplate files
+**/src/assets/.gitkeep
+**/src/favicon.ico
+**/src/systemjs-angular-loader.js
+**/src/systemjs.config.js
+**/src/tsconfig.json
+**/src/polyfills.ts
+**/src/test.ts
+**/e2e/app.po.ts
+**/e2e/tsconfig.e2e.json
+**/.editorconfig
+**/tsconfig.json
+**/bs-config.e2e.json
+**/bs-config.json
+**/tslint.json
+**/karma.conf.js
+**/karma-test-shim.js
+**/browser-test-shim.js
+
 # compiled output
 /dist
 /tmp
