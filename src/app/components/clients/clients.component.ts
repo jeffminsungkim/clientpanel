@@ -8,7 +8,8 @@ import { Client } from '../../models/Client';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  clients: any[];
+  clients: any[]; // We can access this clients from our template.
+  totalOwed: number;
 
   constructor(private clientService: ClientService) {
 
@@ -17,8 +18,17 @@ export class ClientsComponent implements OnInit {
   ngOnInit() {
     // fetch the clients from our service.
     this.clientService.getClients().subscribe(clients => {
-      console.log(clients);
+      this.clients = clients;
+      this.getTotalOwed();
     });
+  }
+
+  getTotalOwed() {
+    let total = 0;
+    for (let i = 0; i < this.clients.length; i++) {
+      total += parseFloat(this.clients[i].balance);
+    }
+    this.totalOwed = total;
   }
 
 }
