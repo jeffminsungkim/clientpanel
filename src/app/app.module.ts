@@ -25,11 +25,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ClientService } from './services/client.service';
 
 // Create Routes
+// :id is a placeholder for whatever is passed in.
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'add-client', component: AddClientComponent}
+  {path: 'add-client', component: AddClientComponent},
+  {path: 'client/:id', component: ClientDetailsComponent}
+  {path: 'edit-client/:id', component: EditClientComponent}
 ];
 
 @NgModule({
