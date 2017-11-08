@@ -1,8 +1,18 @@
 # Clientpanel
 
-It was my first Angular project, and this project is basically about a complete client management system that uses firebase which is a cloud database maintained by Google. It includes real-time databases, authentication storage and much more.
+## Brief Introduction
+
+It is my first Angular project, and this project is basically about a complete client management system that uses [Firebase](https://firebase.google.com/) which is a cloud database maintained by Google. It includes real-time databases, authentication storage and much more.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+
+## Features
+
++ ##### Components are all separately nested inside of the dashboard component.
++ ##### Basic CRUD operations with Firebase
++ ##### Settings component that could disable the entire registration and could disable balance on add/edit.
+
+<br>
 
 ## Development server
 
