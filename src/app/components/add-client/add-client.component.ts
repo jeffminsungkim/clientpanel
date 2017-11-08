@@ -12,9 +12,9 @@ import { ClientService } from '../../services/client.service';
 export class AddClientComponent implements OnInit {
 
   c: Client = {
-    firstName: '';
-    lastName: '';
-    email: '';
+    firstName: '',
+    lastName: '',
+    email: '',
     phone: '',
     balance: 0
   }
