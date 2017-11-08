@@ -11,6 +11,9 @@ export class ClientService {
 
   constructor(private db: AngularFireDatabase) {
     this.clientsRef = this.db.list('clients');
+
+    // If I use valueChanges() instead of using snapshotChanges() I won't be able to fetch key.
+    // Details: https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
     this.clients = this.clientsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
