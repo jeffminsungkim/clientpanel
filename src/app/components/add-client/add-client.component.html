@@ -28,10 +28,10 @@
         minlength="2" 
         required>
         <div *ngIf="clientFirstName.errors?.required && clientFirstName.touched" class="invalid-feedback">
-          First name is required
+          First name is required.
         </div>
-        <div *ngIf="clientFirstName.errors?.minlength && clientFirstName.touched" class="invalid-feedback">
-          Must be at least 2 characters
+        <div *ngIf="clientFirstName.errors?.minlength" class="invalid-feedback">
+          Must be at least 2 characters.
         </div>
       </div>
       <div class="form-group">
@@ -45,10 +45,10 @@
         minlength="2" 
         required>
         <div *ngIf="clientLastName.errors?.required && clientLastName.touched" class="invalid-feedback">
-          Last name is required
+          Last name is required.
         </div>
-        <div *ngIf="clientLastName.errors?.minlength && clientLastName.touched" class="invalid-feedback">
-          Must be at least 2 characters
+        <div *ngIf="clientLastName.errors?.minlength" class="invalid-feedback">
+          Must be at least 2 characters.
         </div>
       </div>
       <div class="form-group">
@@ -59,13 +59,13 @@
         [(ngModel)]="c.email"
         name="email"
         #clientEmail="ngModel"
-        required
-        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        required>
         <div *ngIf="clientEmail.errors?.required && clientEmail.touched" class="invalid-feedback">
-          Email is required
+          Email is required.
         </div>
-        <div *ngIf="clientEmail.errors?.pattern && clientEmail.touched" class="invalid-feedback">
-          Email is invalid
+        <div *ngIf="clientEmail.errors?.pattern" class="invalid-feedback">
+          Email is invalid.
         </div>
       </div>
       <div class="form-group">
@@ -79,10 +79,10 @@
         minlength="10"
         required>
         <div *ngIf="clientPhone.errors?.required && clientPhone.touched" class="invalid-feedback">
-          Phone is required
+          Phone is required.
         </div>
-        <div *ngIf="clientPhone.errors?.minlength && clientPhone.touched" class="invalid-feedback">
-          Phone is not a valid number
+        <div *ngIf="clientPhone.errors?.minlength" class="invalid-feedback">
+          Phone is not a valid number.
         </div>
       </div>
 
