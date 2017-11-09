@@ -31,13 +31,16 @@ import { RegisterGuard } from './guards/register.guard';
 
 // Create Routes
 // :id is a placeholder for whatever is passed in.
+// ** Double asterisks refer to anything that doesn't match these routes here then load the following component.
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [RegisterGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'add-client', component: AddClientComponent, canActivate: [AuthGuard]},
   {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard]},
-  {path: 'edit-client/:id', component: EditClientComponent, canActivate: [AuthGuard]}
+  {path: 'edit-client/:id', component: EditClientComponent, canActivate: [AuthGuard]},
+  {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
