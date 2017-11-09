@@ -11,6 +11,7 @@ import { Client } from '../../models/Client';
 })
 export class ClientDetailsComponent implements OnInit {
   id: string;
+  clientFullName: string;
   client: Client;
   hasBalance: boolean = false;
   showBalanceUpdateInput: boolean = false;
@@ -31,6 +32,7 @@ export class ClientDetailsComponent implements OnInit {
         this.hasBalance = true;
       }
       this.client = client;
+      this.clientFullName = this.client.firstName +" "+ this.client.lastName;
       console.log(this.client);
     });
   }
@@ -45,7 +47,7 @@ export class ClientDetailsComponent implements OnInit {
   onDeleteClick() {
     if (confirm("Are you sure you want to delete the account?")) {
       this.clientService.deleteClient(this.id);
-      this.flashMessagesService.show(this.client.firstName +" "+ this.client.lastName +" "+ 'successfully removed.', {cssClass:'alert-success', timeout: 4000});
+      this.flashMessagesService.show(this.clientFullName +" "+ 'successfully removed.', {cssClass:'alert-success', timeout: 4000});
       this.router.navigate(['/']);
     }
   }
