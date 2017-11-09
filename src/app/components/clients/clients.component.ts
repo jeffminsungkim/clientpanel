@@ -25,9 +25,8 @@ export class ClientsComponent implements OnInit {
 
   getTotalOwed() {
     let total = 0;
-    for (let i = 0; i < this.clients.length; i++) {
+    for (let i = 0; i < this.clients.length; i++)
       total += parseFloat(this.clients[i].balance);
-    }
-    this.totalOwed = total;
+  this.totalOwed = total;
   }
 }
