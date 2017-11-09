@@ -30,6 +30,8 @@ export class ClientDetailsComponent implements OnInit {
     this.clientService.getClient(this.id).subscribe(client => {
       if (client.balance > 0) {
         this.hasBalance = true;
+      } else {
+        this.hasBalance = false;
       }
       this.client = client;
       this.clientFullName = this.client.firstName +" "+ this.client.lastName;
