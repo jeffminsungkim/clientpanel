@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4">
                 <h3 class="pull-right">
-                    Balance
+                    Balance :
                     <span [class.text-danger]="hasBalance" [class.text-success]="!hasBalance"> {{client.balance | currency}}</span>
                     <small> <a (click)="showBalanceUpdateInput = !showBalanceUpdateInput"><i class="fa fa-pencil-square-o"></i></a></small>
                 </h3>
