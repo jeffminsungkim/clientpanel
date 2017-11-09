@@ -12,6 +12,8 @@ import { Client } from '../../models/Client';
 })
 export class EditClientComponent implements OnInit {
   id: string;
+  clientFullName: string;
+
   c: Client = {
     firstName: '',
     lastName: '',
@@ -40,6 +42,7 @@ export class EditClientComponent implements OnInit {
     // Get client
     this.clientService.getClient(this.id).subscribe(client => {
       this.c = client;
+      this.clientFullName = this.c.firstName +" "+ this.c.lastName;
     });
 
     this.disableBalanceOnEdit = this.settingsService.getSettings().disableBalanceOnEdit;

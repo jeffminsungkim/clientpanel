@@ -1,15 +1,14 @@
 <div class="row">
-  <div class="col-md-6">
-    <a routerLink="/" href="#" class="btn btn-link">
-            <i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard
-        </a>
+  <div class="col-md-3">
+    <a routerLink="/" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard</a>
+    <a [routerLink]="['/client/' + id]" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back to Client Details</a>
   </div>
   <div class="col-md-6">
   </div>
 </div>
 <div class="card">
   <div class="card-header">
-    Edit Client
+    <h3>Edit {{ clientFullName }}'s Information</h3>
   </div>
   <div class="card-body">
     <!-- #f is a group variable. It's goning to include all of the fields in this form along with if the form is valid or not. -->
@@ -95,7 +94,7 @@
         #clientBalance="ngModel"
         [disabled]="disableBalanceOnEdit">
       </div>
-      <input type="submit" value="Submit" class="btn btn-primary btn-block">
+      <input type="submit" value="Update" class="btn btn-primary btn-block">
     </form>
   </div>
 </div>
