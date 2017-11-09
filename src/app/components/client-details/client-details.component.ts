@@ -13,8 +13,8 @@ export class ClientDetailsComponent implements OnInit {
   id: string;
   clientFullName: string;
   client: Client;
-  hasBalance: boolean = false;
-  showBalanceUpdateInput: boolean = false;
+  hasBalance: boolean;
+  showBalanceUpdateInput: boolean;
 
   constructor(
     private clientService: ClientService,
@@ -33,15 +33,17 @@ export class ClientDetailsComponent implements OnInit {
       }
       this.client = client;
       this.clientFullName = this.client.firstName +" "+ this.client.lastName;
-      console.log(this.client);
     });
   }
 
   updateBalance(id: string) {
     this.clientService.updateClient(this.id, this.client);
-    this.flashMessagesService.show('Balance updated!', {cssClass:'alert-success', timeout: 4000});
+    this.flashMessagesService.show('Balance updated!', {cssClass:'alert-success', timeout: 2000});
     this.showBalanceUpdateInput = false;
-    this.router.navigate(['/client/' + this.id]);
+    if (this.client.balance == 0) 
+      this.hasBalance = false;
+    else 
+      this.hasBalance = true;
   }
 
   onDeleteClick() {
